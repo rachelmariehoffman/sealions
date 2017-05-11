@@ -1,0 +1,19 @@
+<ion-view>
+    <ion-content class="has-header has-footer">
+        
+        <h1 class="heading">
+            <img src="img/sealions_logo.png" height="20px" width="auto">
+            news
+        </h1>
+
+        <div class="card" ng-repeat="item in articles">
+            <div class="item item-divider">
+                {{item.title}}
+            </div>
+            <div class="item item-text-wrap">
+                {{item.text}}
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

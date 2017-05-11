@@ -1,0 +1,23 @@
+/* Empty. Add your own CSS if you like */
+
+/* dark-blue: #194795 */
+/* medium-blue: #526DB2 */
+/* light-blue: #7F91C4 */
+
+.heading {
+    text-align: center; 
+    color: #194795; 
+    font-variant: small-caps; 
+    font-weight: bold;
+}
+
+.home-img {
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    margin: 0 auto;
+}
+
+.slider-photo {
+    max-width: 100%;
+}

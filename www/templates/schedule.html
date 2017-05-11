@@ -1,0 +1,23 @@
+<ion-view>
+    <ion-content class="has-header has-footer">
+        
+        <h1 class="heading">
+            <img src="img/sealions_logo.png" height="20px" width="auto">
+            schedule
+        </h1> 
+        
+        <ul class="list">
+            <li class="item row" ng-repeat="item in games">
+                <div class="col col-80">
+                    <h2><strong>{{item.opponent}}</strong></h2>
+                    {{item.date}} | {{item.time}}<br>
+                    {{item.location}}
+                </div>
+                <div class="col col-20" style="text-align:right">
+                    <i class="ion-plus-circled"></i>&nbsp;<i class="ion-calendar"></i>
+                </div>
+            </li>
+        </ul>
+
+    </ion-content>
+</ion-view>

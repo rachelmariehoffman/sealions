@@ -1,0 +1,27 @@
+<ion-view>
+    <ion-content class="has-header has-footer">
+        
+        <h1 class="heading">
+            <img src="img/sealions_logo.png" height="20px" width="auto">
+            team
+        </h1>
+        
+        <div class="list card" ng-repeat="item in questions">
+            <div class="item">
+                <h2>{{item.category}}</h2>
+                <p>{{item.question}}</p>
+            </div>
+        </div>
+
+        <div class="list card" ng-repeat="item in players">
+            <div class="item item-image">
+                <img ng-src="img/headshots/{{item.headshot}}.jpg" alt="Player Headshot"/>
+            </div>
+            <div class="item">
+                <h2>{{item.name}} #{{item.jersey}}</h2>
+                <p>{{item.position}}</p>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>
