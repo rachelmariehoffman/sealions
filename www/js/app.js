@@ -24,13 +24,21 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+    
+    $ionicConfigProvider.views.transition('none');
+    
     $urlRouterProvider.otherwise('/');
     $stateProvider
         .state('home', {
             url: '/',
             templateUrl: 'templates/home.html',
             controller: 'HomeCtrl'
+        })
+        .state('news', {
+            url: '/news',
+            templateUrl: 'templates/news.html',
+            controller: 'NewsCtrl'
         })
         .state('team', {
             url: '/team',
@@ -42,10 +50,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
             templateUrl: 'templates/schedule.html',
             controller: 'ScheduleCtrl'
         })
-        .state('news', {
-            url: '/news',
-            templateUrl: 'templates/news.html',
-            controller: 'NewsCtrl'
+        .state('sponsors', {
+            url: '/sponsors',
+            templateUrl: 'templates/sponsors.html',
+            controller: 'SponsorCtrl'
         })
         ;
 });

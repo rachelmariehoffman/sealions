@@ -1,0 +1,29 @@
+<ion-view>
+    <ion-content>
+        
+        <div class="strike header-text" ui-sref="home">
+            <span>SeaLions Sponsors</span>
+        </div>
+        
+        <div class="header-text dark" style="margin-bottom:15px">
+            {{globalText[0].sponsors}}
+        </div>
+
+        <div ng-repeat="item in sponsors">
+            
+            <button class="button-block button-style opaque center-button" href="{{item.website}}">
+                {{item.title}}
+            </button>
+            {{item.body}}
+            <img class="sponsor-photo" ng-src="{{item.logo.src}}" alt="Sponsor Logo"/>
+            <img class="sponsor-photo" style="float:right" ng-src="{{item.qr_code.src}}" alt="Sponsor QR Code"/>
+
+
+        </div>
+        
+        <!--<button class="home-fab" ui-sref="home">-->
+        <!--    <i class="ion-home"></i>-->
+        <!--</button>-->
+
+    </ion-content>
+</ion-view>
