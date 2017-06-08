@@ -1,11 +1,10 @@
 <ion-view>
-    <ion-content>
-        
-        <div class="strike header-text" ui-sref="home">
-            <span>SeaLions Roster</span>
-        </div>
+    <ion-header-bar align-title="middle" style="background-color: #526DB2">
+        <h1 class="title">SeaLions Roster</h1>
+    </ion-header-bar>
+    <ion-content class="has-header has-footer">
 
-        <div class="header-text dark" style="margin-bottom:15px">
+        <div class="header-text dark">
             {{globalText[0].roster}}
         </div>
 
@@ -13,17 +12,20 @@
             <img class="player-photo" ng-src="{{item.headshot.src}}" alt="Player Headshot" />
             <h1 class="player-name">
                 <span class="player-text-overlay">
-                    {{item.position}}
+                    {{item.position | limitTo: 27}}
                     &nbsp;&nbsp;<br>&nbsp;&nbsp;
                     #{{item.jersey_number}} {{item.first}} {{item.last}}
-                    
                 </span>
             </h1>
-        </div>  
-        
-        <!--<button class="home-fab" ui-sref="home">-->
-        <!--    <i class="ion-home"></i>-->
-        <!--</button>-->
+        </div>
 
     </ion-content>
+    
+    <ion-footer-bar>
+        <i class="footer-icon ion-home" ui-sref="home"></i>
+        <i class="footer-icon ion-document-text" ui-sref="news"></i> 
+        <i class="footer-icon ion-calendar" ui-sref="schedule"></i> 
+        <i class="footer-icon ion-tshirt" ui-sref="team"></i> 
+        <i class="footer-icon ion-earth" ui-sref="sponsors"></i> 
+    </ion-footer-bar>
 </ion-view>

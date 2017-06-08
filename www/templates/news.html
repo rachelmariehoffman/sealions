@@ -1,11 +1,14 @@
 <ion-view>
-    <ion-content>
+    <ion-header-bar align-title="middle" style="background-color: #526DB2">
+        <h1 class="title">SeaLions News</h1>
+    </ion-header-bar>
+    <ion-content class="has-header has-footer">
         
-        <div class="strike header-text" ui-sref="home">
-            <span>SeaLions News</span>
-        </div>
+        <!--<div class="strike header-text" ui-sref="home">-->
+        <!--    <span>SeaLions News</span>-->
+        <!--</div>-->
         
-        <div class="header-text dark" style="margin-bottom:15px">
+        <div class="header-text dark">
             {{globalText[0].news_posts}}
         </div>
 
@@ -13,7 +16,7 @@
             <img class="hero-photo" ng-src="{{item.hero_image.src}}" alt="Hero Image"/>
             <h1>{{item.title}}</h1>
             <p>{{item.body | limitTo: 150}}...</p>
-            <button class="button-block button-style opaque center-button">
+            <button class="button-block button-style opaque center-button" ng-click="modal.show(); selectPost(item)">
                 Read More
             </button>
             <br>
@@ -21,9 +24,35 @@
             <br>
         </div>
 
-        <!--<button class="home-fab" ui-sref="home">-->
-        <!--    <i class="ion-home"></i>-->
-        <!--</button>-->
-
     </ion-content>
+    
+    <ion-footer-bar>
+        <i class="footer-icon ion-home" ui-sref="home"></i>
+        <i class="footer-icon ion-document-text" ui-sref="news"></i> 
+        <i class="footer-icon ion-calendar" ui-sref="schedule"></i> 
+        <i class="footer-icon ion-tshirt" ui-sref="team"></i> 
+        <i class="footer-icon ion-earth" ui-sref="sponsors"></i> 
+    </ion-footer-bar>
 </ion-view>
+
+
+
+<script id="post-modal.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar align-title="middle" style="background-color: #526DB2">
+            <h1 class="title">SeaLions News</h1>
+            <div class="buttons" style="color: white;" ng-click="modal.hide()">
+                <i class="ion-close-circled"></i>
+            </div>
+        </ion-header-bar>
+        <ion-content style="padding-top:15px">
+            <img class="hero-photo" ng-src="{{selectedPost.hero_image.src}}" alt="Hero Image"/  style="margin-top:15px">
+            <h1>{{selectedPost.title}}</h1>
+            <p>{{selectedPost.body}}</p>
+            <button class="button-block button-style opaque center-button" ng-click="modal.hide()">
+                Return to News Page
+            </button>
+            <br>
+        </ion-content>
+    </ion-modal-view>
+</script>

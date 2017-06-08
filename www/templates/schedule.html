@@ -1,16 +1,18 @@
 <ion-view>
-    <ion-content>
+    <ion-header-bar align-title="middle" style="background-color: #526DB2">
+        <h1 class="title">SeaLions Schedule</h1>
+    </ion-header-bar>
+    <ion-content class="has-header has-footer">
         
-        <div class="strike header-text" ui-sref="home">
-            <span>SeaLions Schedule</span>
-        </div>
+        <!--<div class="strike header-text" ui-sref="home">-->
+        <!--    <span>SeaLions Schedule</span>-->
+        <!--</div>-->
 
-        <div class="header-text dark" style="margin-bottom:15px">
+        <div class="header-text dark">
             {{globalText[0].game_schedule}}
         </div>
 
         <div ng-repeat="item in games" class="schedule-border">
-
             <p style="text-align:left;">
                 <span class="game-date">
                     <span style="font-size:24px">{{item.date | date: "d"}}</span>
@@ -28,13 +30,16 @@
                     {{item.win_or_loss}}: {{item.sealions_score}} - {{item.opponents_score}}
                 </div>
             </p>
-
         </div>
-        
-        <!--<button class="home-fab" ui-sref="home">-->
-        <!--    <i class="ion-home"></i>-->
-        <!--</button>-->
 
     </ion-content>
+    
+    <ion-footer-bar>
+        <i class="footer-icon ion-home" ui-sref="home"></i>
+        <i class="footer-icon ion-document-text" ui-sref="news"></i> 
+        <i class="footer-icon ion-calendar" ui-sref="schedule"></i> 
+        <i class="footer-icon ion-tshirt" ui-sref="team"></i> 
+        <i class="footer-icon ion-earth" ui-sref="sponsors"></i> 
+    </ion-footer-bar>
 </ion-view>
 

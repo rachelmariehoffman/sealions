@@ -20,8 +20,8 @@ angular.module('starter.controllers', ['ngResource'])
     }
 ])
 
-.controller('NewsCtrl', ['$scope', '$state', '$ionicHistory', '$window', '$http', '$resource', '$ionicSlideBoxDelegate',
-    function($scope, $state, $ionicHistory, $window, $http, $resource, $ionicSlideBoxDelegate) {
+.controller('NewsCtrl', ['$scope', '$state', '$ionicHistory', '$window', '$http', '$resource', '$ionicModal',
+    function($scope, $state, $ionicHistory, $window, $http, $resource, $ionicModal) {
         
         $http.get('https://dev-sealions.pantheonsite.io/api/sealions-posts').then(function(response) {
             $scope.posts = response.data.posts;
@@ -59,6 +59,17 @@ angular.module('starter.controllers', ['ngResource'])
                 "sponsors":"Check out our sponsors below."
             }
         ];
+        
+        $scope.selectPost = function(item) {
+            $scope.selectedPost = item;
+        };
+        
+        $ionicModal.fromTemplateUrl('post-modal.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function(modal) {
+            $scope.modal = modal;
+        });
 
     }
 ])
@@ -93,7 +104,7 @@ angular.module('starter.controllers', ['ngResource'])
             },{
                 "opponent":"Phoenix Del Sol",
                 "date":"06\/10\/2017 - 19:30",
-                "home_or_away":"Home",
+                "home_or_away":"Away",
                 "location":"Reach 11 #1, 2425 E Deer Valley Dr, Phoenix, AZ 85050",
                 "win_or_loss":"",
                 "sealions_score":"",
@@ -174,8 +185,8 @@ angular.module('starter.controllers', ['ngResource'])
     }
 ])
 
-.controller('SponsorCtrl', ['$scope', '$state', '$ionicHistory', '$window', '$http', '$resource',
-    function($scope, $state, $ionicHistory, $window, $http, $resource) {
+.controller('SponsorCtrl', ['$scope', '$state', '$ionicHistory', '$window', '$http', '$resource', '$ionicModal',
+    function($scope, $state, $ionicHistory, $window, $http, $resource, $ionicModal) {
 
         $http.get('https://dev-sealions.pantheonsite.io/api/sealions-sponsors').then(function(response) {
             $scope.sponsors = response.data.sponsors;
@@ -185,6 +196,19 @@ angular.module('starter.controllers', ['ngResource'])
         });
 
         $scope.sponsors = [
+            {
+                "title":"Ben & Jerrys",
+                "logo":{
+                    "src":"http:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/thumbnail\/public\/sealions-sponsor-logo--ben-and-jerrys.jpg?itok=hE0wyrNy",
+                    "alt":""
+                },
+                "qr_code":{
+                    "src":"http:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/qr_code\/public\/sealions-sponsor-qr-code--ben-and-jerrys.png?itok=rSxrz99q",
+                    "alt":""
+                },
+                "website":"http:\/\/www.benjerry.com\/",
+                "body":"From a renovated gas station in Burlington, Vermont, to far-off places with names we sometimes mispronounce, the journey that began in 1978 with 2 guys and the ice cream business they built is as legendary as the ice cream is euphoric."
+            },
             {
                 "title":"Ben & Jerrys",
                 "logo":{
@@ -209,6 +233,17 @@ angular.module('starter.controllers', ['ngResource'])
                 "sponsors":"Check out our sponsors below."
             }
         ];
+        
+        $scope.selectSponsor = function(item) {
+            $scope.selectedSponsor = item;
+        };
+        
+        $ionicModal.fromTemplateUrl('sponsor-modal.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function(modal) {
+            $scope.modal = modal;
+        });
 
     }
 ])

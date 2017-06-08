@@ -1,14 +1,9 @@
-/* Empty. Add your own CSS if you like */
-
 /* dark-blue: #194795 */
 
+/* medium-blue: #526DB2, rgb(82, 109, 178)*/
+/* light-blue:  #7F91C4 */
 
-/* medium-blue: #526DB2 */
-/* light-blue: #7F91C4 */
-
-/* background: #e5e9f3 */
-
-
+/* background:  #e5e9f3 */
 
 ion-content {
     padding: 10%;
@@ -17,8 +12,8 @@ ion-content {
 
 hr {
     border-top: 1px solid #7F91C4;
-    margin-top: 25px;
-    margin-bottom:25px;
+    margin-top: 15px;
+    margin-bottom:15px;
 }
 
 h1 {
@@ -39,24 +34,50 @@ a {
 
 .landing-logo {
     text-align: center;
-    margin-bottom: 25px;
+}
+
+.social-logo {
+    width: 30px;
+}
+
+.website {
+    font-size: 14px;
+    color: #526DB2;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.title {
+    color: white;
 }
 
 .header-text {
-    font-size: 11px;
+    font-size: 14px;
     text-transform: uppercase;
     color: #526DB2;
     text-align: center;
     font-weight: 600;
+    margin-top: 30px;
+}
+
+.footer-icon {
+    width: 20%;
+    font-size: 18px;
+    text-align: center;
+    margin: auto;
+    color: #526DB2;
 }
 
 .dark {
+    font-style: italic;
     color: #3d3d3d;
+    padding-bottom: 15px;
 }
 
 .button-style {
     text-align: left;
-    font-size: 11px;
+    font-size: 14px;
     font-weight:600; 
     text-transform: uppercase;
     border: 1px solid #7F91C4;
@@ -103,14 +124,14 @@ a {
 }
 
 .schedule-border {
-    border-left:5px solid #526DB2; 
-    padding-left:15px; 
-    margin-bottom:30px
+    border-left: 5px solid #526DB2; 
+    padding-left: 15px; 
+    margin-bottom: 45px
 }
 
 .game-date {
-    color:#3d3d3d;
-    font-weight:600; 
+    color: #3d3d3d;
+    font-weight: 600; 
     text-transform: uppercase;
 }
 
@@ -152,7 +173,10 @@ a {
 }
 
 .sponsor-photo {
-    width: 49%;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 15px;
+    /*border: 5px solid #526DB2;*/
 }
 
 
@@ -171,12 +195,11 @@ a {
 
 
 .strike {
-    margin: 15px 0px;
     display: block;
     text-align: center;
     overflow: hidden;
     white-space: nowrap;
-    padding: 10px 0px;
+    padding: 15px 0px;
 }
     
 .strike>span {
