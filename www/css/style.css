@@ -6,7 +6,7 @@
 /* background:  #e5e9f3 */
 
 ion-content {
-    padding: 10%;
+    padding: 5%;
     background-color: #e5e9f3;
 }
 
@@ -32,27 +32,16 @@ a {
     color: #526DB2;
 }
 
-.landing-logo {
-    text-align: center;
-}
+/*    GENERAL    */
 
-.social-logo {
-    width: 30px;
+.none {
+    padding:0px; 
+    margin:0px;
 }
-
-.website {
-    font-size: 14px;
-    color: #526DB2;
-    text-align: center;
-    font-weight: 600;
-    text-decoration: none;
-}
-
 .title {
     color: white;
 }
-
-.header-text {
+.header-text {                        /*    WELCOME, USED ON GLOBAL TEXT AT TOP OF PAGES    */
     font-size: 14px;
     text-transform: uppercase;
     color: #526DB2;
@@ -60,20 +49,26 @@ a {
     font-weight: 600;
     margin-top: 30px;
 }
-
+.dark {                                /*    USED ON GLOBAL TEXT AT TOP OF PAGES    */
+    font-style: italic;
+    color: #3d3d3d;
+    padding-bottom: 15px;
+}
 .footer-icon {
     width: 20%;
-    font-size: 18px;
+    font-size: 24px;
     text-align: center;
     margin: auto;
     color: #526DB2;
 }
 
-.dark {
-    font-style: italic;
-    color: #3d3d3d;
-    padding-bottom: 15px;
+.text-center {
+    text-align: center;
 }
+
+
+
+/*    BUTTON STYLES    */
 
 .button-style {
     text-align: left;
@@ -85,69 +80,97 @@ a {
     margin: 5px 0px;
     padding: 10px 0px;
 }
-
 .center-button {
     font-size: 14px;
     text-align: center;
 }
-    
 .transparent {
     color: #7F91C4;
     background-color: transparent;
 }
-    
 .opaque {
     color: #e5e9f3;
     background-color: #7F91C4;
 }
-
 .button-icon-margin {
     margin-right: 15px; 
     margin-left: 15px
 }
 
-.home-fab {
-    top: 0px;
-    right: 0px;
-    position: fixed;
-    border-radius: 50%;
-    color: #e5e9f3;
-    background-color: #7F91C4;
-    width: 30px;
-    height: 30px;
-    border: none;
+
+
+/*    HOME PAGE    */
+
+.landing-logo {
+    text-align: center;
 }
+.social-logo {
+    width: 50px;
+}
+.website {
+    font-size: 14px;
+    color: #526DB2;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+
+/*    NEWS PAGE    */
 
 .hero-photo {
     width:100%;
     max-width: 100%;
 }
 
+
+
+/*    SCHEDULE PAGE    */
+
 .schedule-border {
     border-left: 5px solid #526DB2; 
-    padding-left: 15px; 
-    margin-bottom: 45px
+    padding: 5px;
+    background-color: white;
 }
-
-.game-date {
-    color: #3d3d3d;
-    font-weight: 600; 
+.schedule-margin {
+    margin-bottom: 30px;
+}
+.team-logo {
+    width: 65px;
+}
+.home-away {
+    font-size: 10px;
+    color: #999999;
+    text-align: center;
     text-transform: uppercase;
 }
-
-.game-time {
-    float: right;
-    line-height: 28px;
+.game-date {
+    color: #999999;
+    font-weight: 500; 
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 10px;
 }
-
+.game-time {
+    margin-top: 15px;
+    font-size: 24px;
+    font-weight: 500;
+    text-align:center;
+}
 .game-result {
-    background-color: white;
-    color:#3d3d3d;
+    background-color: #526DB2;
+    color: white;
     font-weight:600; 
     text-transform: uppercase;
     padding: 5px;
     text-align: center;
+    margin-bottom: 30px;
 }
+
+
+
+/*    PLAYER PAGE    */
 
 .player { 
    position: relative; 
@@ -172,11 +195,20 @@ a {
    padding: 10px; 
 }
 
+.jersey {
+    font-size: 24px;
+    color:#3d3d3d;
+    font-weight:600; 
+}
+
+
+
+/*    SPONSOR PAGE    */
+
 .sponsor-photo {
     width: 100%;
     max-width: 100%;
     margin-bottom: 15px;
-    /*border: 5px solid #526DB2;*/
 }
 
 

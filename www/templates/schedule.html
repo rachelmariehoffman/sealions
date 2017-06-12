@@ -3,33 +3,40 @@
         <h1 class="title">SeaLions Schedule</h1>
     </ion-header-bar>
     <ion-content class="has-header has-footer">
-        
-        <!--<div class="strike header-text" ui-sref="home">-->
-        <!--    <span>SeaLions Schedule</span>-->
-        <!--</div>-->
 
         <div class="header-text dark">
-            {{globalText[0].game_schedule}}
+            {{global_text[0].game_schedule}}
         </div>
+        
+        <div ng-repeat="item in games" >
+            <div class="game-date">
+                {{item.date}}<br>
+                <small>{{item.opponent}}</small>
+            </div>
+            <div class="schedule-border" data-ng-class="{'schedule-margin': !item.win_or_loss}">
 
-        <div ng-repeat="item in games" class="schedule-border">
-            <p style="text-align:left;">
-                <span class="game-date">
-                    <span style="font-size:24px">{{item.date | date: "d"}}</span>
-                    {{item.date | date: "MMMM, y"}}
-                    {{item.date | date: "EEEE"}}
-                    <span class="game-time">
-                        {{item.time}}
-                    </span>
-                </span>
-                <br>
-                {{item.opponent}} ({{item.home_or_away}})
-                <br>
-                <a href="http://maps.apple.com/?q={{item.location}}">{{item.location}}</a>
-                <div class="button-block button-style opaque center-button" ng-if="item.win_or_loss">
-                    {{item.win_or_loss}}: {{item.sealions_score}} - {{item.opponents_score}}
+                <div class="row" class="none">
+                    <div class="col col-25 none">
+                        <img class="team-logo none" ng-if="item.home_or_away != 'Away'" ng-src="{{global_text[0].sealions_logo.src}}">
+                        <img class="team-logo none" ng-if="item.home_or_away === 'Away'" ng-src="{{item.opponent_logo.src}}">
+                        <div class="home-away none">Home</div>
+                    </div>
+                    <div class="col col-50 game-time none">
+                        {{item.time}}<br>
+                        <a class="home-away" href="http://maps.apple.com/?q={{item.location}}">View Location</a>
+                    </div>
+                    <div class="col col-25 none">
+                        <img class="team-logo none" ng-if="item.home_or_away === 'Away'" ng-src="{{global_text[0].sealions_logo.src}}">
+                        <img class="team-logo none" ng-if="item.home_or_away != 'Away'" ng-src="{{item.opponent_logo.src}}">
+                        <div class="home-away none">Away</div>
+                    </div>
                 </div>
-            </p>
+                
+            </div>
+            
+            <div class="game-result" ng-show="item.win_or_loss">
+                {{item.win_or_loss}}: {{item.sealions_score}} - {{item.opponents_score}}
+            </div>
         </div>
 
     </ion-content>

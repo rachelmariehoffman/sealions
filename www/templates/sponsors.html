@@ -3,13 +3,9 @@
         <h1 class="title">SeaLions Sponsors</h1>
     </ion-header-bar>
     <ion-content class="has-header has-footer">
-        
-        <!--<div class="strike header-text" ui-sref="home">-->
-        <!--    <span>SeaLions Sponsors</span>-->
-        <!--</div>-->
-        
+    
         <div class="header-text dark">
-            {{globalText[0].sponsors}}
+            {{global_text[0].sponsors}}
         </div>
 
         <div ng-repeat="item in sponsors">
@@ -51,9 +47,11 @@
             
             <img class="sponsor-photo" ng-src="{{selectedSponsor.qr_code.src}}" alt="Sponsor QR Code"/  style="margin-top:15px">
             
-            <button class="button-block button-style transparent center-button" href="{{selectedSponsor.website}}">
-                Visit Website
-            </button>
+            <a href="{{selectedSponsor.website}}">
+                <button class="button-block button-style transparent center-button">
+                    Visit Website
+                </button>
+            </a>
             <button class="button-block button-style opaque center-button" ng-click="modal.hide()">
                 Return to Sponsors Page
             </button>

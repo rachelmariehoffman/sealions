@@ -4,18 +4,10 @@ angular.module('starter.controllers', ['ngResource'])
     function($scope, $state, $ionicHistory, $window, $http) {
         
         $http.get('https://dev-sealions.pantheonsite.io/api/sealions-global-text').then(function(response) {
-            $scope.globalText = response.data.posts;
+            $scope.global_text = response.data.global_text;
         });
         
-        $scope.globalText = [
-            {
-                "home":"Welcome to the Sealions app!",
-                "game_schedule":"Check out the game schedule below.",
-                "roster":"Check out the roster below.",
-                "news_posts":"Check out the latest Sealions news below.",
-                "sponsors":"Check out our sponsors below."
-            }
-        ];
+        $scope.global_text = [{"home":"Welcome to the Sealions app!","game_schedule":"Check out the game schedule below.","roster":"Check out the roster below.","news_posts":"Check out the latest Sealions news below.","sponsors":"Check out our sponsors below.","wpsl_logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/team_logo\/public\/wpsl-logo.jpg?itok=UFYDJ9O9","alt":""},"wpsl_url":"http:\/\/www.wpsl.info\/","sealions_logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/team_logo\/public\/wpsl-logo--sealions.jpg?itok=NTcYpiTk","alt":""},"sealions_url":"http:\/\/www.sealionsoccer.com\/"}];
         
     }
 ])
@@ -27,39 +19,13 @@ angular.module('starter.controllers', ['ngResource'])
             $scope.posts = response.data.posts;
         });
         $http.get('https://dev-sealions.pantheonsite.io/api/sealions-global-text').then(function(response) {
-            $scope.globalText = response.data.posts;
+            $scope.global_text = response.data.global_text;
         });
         
-        $scope.posts =[
-            {
-                "hero_image":{
-                    "src":"http:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/thumbnail\/public\/sealions-news-post-001_0.jpg?itok=3dWGHoKj",
-                    "alt":""
-                },
-                "title":"SeaLions Refuse to Quit, Earn Season-Opening Win!",
-                "date":"05\/23\/2017 - 21:00",
-                "body":"Huntington Beach, CA \u2013 Angelina Hix found the net just seconds from the final whistle Sunday afternoon, to claim a gutsy and hard-fought 1-0 win for the San Diego SeaLions to open their 2017 WPSL PacSouth season.\r\n\r\nMay 23, 2017\r\n\r\nBY HECTOR TRUJILLO, SPORTS WRITER\r\nPhoto credit: Aaron Jaffe\r\n\r\n\"This was a tough match for 93 minutes, and lesser teams would\u2019ve settled for a draw,\" said SeaLions head coach Jen Lalor. \"But this win serves notice: we don\u2019t settle. Our players never quit.\u201d \r\n\r\nIndeed, by the 80th minute it was clear that host South Coast FC was playing for the draw against the 2016 WPSL championship finalist SeaLions, after surviving a constant barrage of SeaLion shots, corner kicks, and forays into their end of the field. The SeaLions created nine scoring chances, including two or three open nets, in the first 45 minutes of play but could not convert. The team could have easily been up 5-0 entering the second half of play but several of their scoring opportunities ended up hitting the crossbar, the post, or being deflected by the opposing goalkeeper. As it was, SCFC managed only two shots on goal the entire match.\r\n\r\n\"We felt like we should have been up 5-0 by halftime,\" said San Diego captain and midfielder Rosie Tantillo-Colon (USC\/FC Gold Pride). \"We had great rhythm going forward, and our eagerness to get some goals had us playing a more direct attack than we normally play.\"\r\n\r\nIt was Tantillo Colon\u2019s one-touch pass to Hix (Mira Costa College) who had broken open down the left side that led to the goal, a smooth left-footed shot from near the end-line that tucked just inside the right post.\r\n\r\n\u201cThat was the most difficult shot we took all afternoon,\u201d added Lalor. \u201cA lot of players and teams would have missed that chance, especially in light of all the earlier chances that hadn\u2019t succeeded. But our ladies refused to bend to the pressure, and refused to give up.\u201d\r\n\r\nDespite San Diego\u2019s defensive dominance, the match very nearly ended in disaster in the 78th minute, when South Coast forward Natalia Ledezma (UC-Irvine) broke away towards San Diego\u2019s goal and looked sure to score. It took a spectacular save from SeaLions goalkeeper Kaycee Gunion (CSU-San Marcos) to keep the score 0-0. That was the only, and last, real chance South Coast would see in the game.\r\n\r\n\"The game highlighted some of our strengths of character, and it also showed us what we should work on,\u201d noted Assistant Coach Lu Snyder. \u201cWe also saw good things from our newcomers Monica Dolinsky (Kansas) whose link-up play in midfield kept us on the attack, and Sam Staab (Clemson), whose solid defending helped give us the confidence to repeatedly go forward. Thus the game was a success from every angle. And we will get even better!\"\r\n\r\nThe SeaLions travel to Arizona on June 9-10, 2017 to face Phoenix Del Sol and Tucson FC, before returning to San Diego for San Diego Soccer Weekend on Saturday and Sunday, June 17 at 7:30 p.m., and June 18, at 2:00 p.m., when they will host those same Arizona teams.\r\n\r\nThe San Diego SeaLions are a non-profit 501c3 entity dedicated to fostering women's soccer coaching, playing, and business management opportunities. It\u2019s one of the oldest and most successful women\u2019s soccer clubs in the USA and is a charter member of the WPSL."
-            },{
-                "hero_image":{
-                    "src":"http:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/thumbnail\/public\/sealions-news-post-002_0.jpg?itok=iy5mX3cO",
-                    "alt":""
-                },
-                "title":"SeaLions Refuse to Quit, Earn Season-Opening Win!",
-                "date":"05\/19\/2017 - 21:00",
-                "body":"Huntington Beach, CA \u2013 Angelina Hix found the net just seconds from the final whistle Sunday afternoon, to claim a gutsy and hard-fought 1-0 win for the San Diego SeaLions to open their 2017 WPSL PacSouth season.\r\n\r\nMay 23, 2017\r\n\r\nBY HECTOR TRUJILLO, SPORTS WRITER\r\nPhoto credit: Aaron Jaffe\r\n\r\n\"This was a tough match for 93 minutes, and lesser teams would\u2019ve settled for a draw,\" said SeaLions head coach Jen Lalor. \"But this win serves notice: we don\u2019t settle. Our players never quit.\u201d \r\n\r\nIndeed, by the 80th minute it was clear that host South Coast FC was playing for the draw against the 2016 WPSL championship finalist SeaLions, after surviving a constant barrage of SeaLion shots, corner kicks, and forays into their end of the field. The SeaLions created nine scoring chances, including two or three open nets, in the first 45 minutes of play but could not convert. The team could have easily been up 5-0 entering the second half of play but several of their scoring opportunities ended up hitting the crossbar, the post, or being deflected by the opposing goalkeeper. As it was, SCFC managed only two shots on goal the entire match.\r\n\r\n\"We felt like we should have been up 5-0 by halftime,\" said San Diego captain and midfielder Rosie Tantillo-Colon (USC\/FC Gold Pride). \"We had great rhythm going forward, and our eagerness to get some goals had us playing a more direct attack than we normally play.\"\r\n\r\nIt was Tantillo Colon\u2019s one-touch pass to Hix (Mira Costa College) who had broken open down the left side that led to the goal, a smooth left-footed shot from near the end-line that tucked just inside the right post.\r\n\r\n\u201cThat was the most difficult shot we took all afternoon,\u201d added Lalor. \u201cA lot of players and teams would have missed that chance, especially in light of all the earlier chances that hadn\u2019t succeeded. But our ladies refused to bend to the pressure, and refused to give up.\u201d\r\n\r\nDespite San Diego\u2019s defensive dominance, the match very nearly ended in disaster in the 78th minute, when South Coast forward Natalia Ledezma (UC-Irvine) broke away towards San Diego\u2019s goal and looked sure to score. It took a spectacular save from SeaLions goalkeeper Kaycee Gunion (CSU-San Marcos) to keep the score 0-0. That was the only, and last, real chance South Coast would see in the game.\r\n\r\n\"The game highlighted some of our strengths of character, and it also showed us what we should work on,\u201d noted Assistant Coach Lu Snyder. \u201cWe also saw good things from our newcomers Monica Dolinsky (Kansas) whose link-up play in midfield kept us on the attack, and Sam Staab (Clemson), whose solid defending helped give us the confidence to repeatedly go forward. Thus the game was a success from every angle. And we will get even better!\"\r\n\r\nThe SeaLions travel to Arizona on June 9-10, 2017 to face Phoenix Del Sol and Tucson FC, before returning to San Diego for San Diego Soccer Weekend on Saturday and Sunday, June 17 at 7:30 p.m., and June 18, at 2:00 p.m., when they will host those same Arizona teams.\r\n\r\nThe San Diego SeaLions are a non-profit 501c3 entity dedicated to fostering women's soccer coaching, playing, and business management opportunities. It\u2019s one of the oldest and most successful women\u2019s soccer clubs in the USA and is a charter member of the WPSL."
-            }
-        ];
+        $scope.posts = [{"hero_image":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/news_post\/public\/sealions-news-post-001_0.jpg?itok=3R550Ifz","alt":""},"title":"SeaLions Refuse to Quit, Earn Season-Opening Win!","date":"May 23, 2017 9:00 pm","body":"Huntington Beach, CA \u2013 Angelina Hix found the net just seconds from the final whistle Sunday afternoon, to claim a gutsy and hard-fought 1-0 win for the San Diego SeaLions to open their 2017 WPSL PacSouth season.\r\n\r\nMay 23, 2017\r\n\r\nBY HECTOR TRUJILLO, SPORTS WRITER\r\nPhoto credit: Aaron Jaffe\r\n\r\n\"This was a tough match for 93 minutes, and lesser teams would\u2019ve settled for a draw,\" said SeaLions head coach Jen Lalor. \"But this win serves notice: we don\u2019t settle. Our players never quit.\u201d \r\n\r\nIndeed, by the 80th minute it was clear that host South Coast FC was playing for the draw against the 2016 WPSL championship finalist SeaLions, after surviving a constant barrage of SeaLion shots, corner kicks, and forays into their end of the field. The SeaLions created nine scoring chances, including two or three open nets, in the first 45 minutes of play but could not convert. The team could have easily been up 5-0 entering the second half of play but several of their scoring opportunities ended up hitting the crossbar, the post, or being deflected by the opposing goalkeeper. As it was, SCFC managed only two shots on goal the entire match.\r\n\r\n\"We felt like we should have been up 5-0 by halftime,\" said San Diego captain and midfielder Rosie Tantillo-Colon (USC\/FC Gold Pride). \"We had great rhythm going forward, and our eagerness to get some goals had us playing a more direct attack than we normally play.\"\r\n\r\nIt was Tantillo Colon\u2019s one-touch pass to Hix (Mira Costa College) who had broken open down the left side that led to the goal, a smooth left-footed shot from near the end-line that tucked just inside the right post.\r\n\r\n\u201cThat was the most difficult shot we took all afternoon,\u201d added Lalor. \u201cA lot of players and teams would have missed that chance, especially in light of all the earlier chances that hadn\u2019t succeeded. But our ladies refused to bend to the pressure, and refused to give up.\u201d\r\n\r\nDespite San Diego\u2019s defensive dominance, the match very nearly ended in disaster in the 78th minute, when South Coast forward Natalia Ledezma (UC-Irvine) broke away towards San Diego\u2019s goal and looked sure to score. It took a spectacular save from SeaLions goalkeeper Kaycee Gunion (CSU-San Marcos) to keep the score 0-0. That was the only, and last, real chance South Coast would see in the game.\r\n\r\n\"The game highlighted some of our strengths of character, and it also showed us what we should work on,\u201d noted Assistant Coach Lu Snyder. \u201cWe also saw good things from our newcomers Monica Dolinsky (Kansas) whose link-up play in midfield kept us on the attack, and Sam Staab (Clemson), whose solid defending helped give us the confidence to repeatedly go forward. Thus the game was a success from every angle. And we will get even better!\"\r\n\r\nThe SeaLions travel to Arizona on June 9-10, 2017 to face Phoenix Del Sol and Tucson FC, before returning to San Diego for San Diego Soccer Weekend on Saturday and Sunday, June 17 at 7:30 p.m., and June 18, at 2:00 p.m., when they will host those same Arizona teams.\r\n\r\nThe San Diego SeaLions are a non-profit 501c3 entity dedicated to fostering women's soccer coaching, playing, and business management opportunities. It\u2019s one of the oldest and most successful women\u2019s soccer clubs in the USA and is a charter member of the WPSL."},{"hero_image":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/news_post\/public\/sealions-news-post-002_0.jpg?itok=GzS8NQQ2","alt":""},"title":"SeaLions Refuse to Quit, Earn Season-Opening Win!","date":"May 19, 2017 9:00 pm","body":"Huntington Beach, CA \u2013 Angelina Hix found the net just seconds from the final whistle Sunday afternoon, to claim a gutsy and hard-fought 1-0 win for the San Diego SeaLions to open their 2017 WPSL PacSouth season.\r\n\r\nMay 23, 2017\r\n\r\nBY HECTOR TRUJILLO, SPORTS WRITER\r\nPhoto credit: Aaron Jaffe\r\n\r\n\"This was a tough match for 93 minutes, and lesser teams would\u2019ve settled for a draw,\" said SeaLions head coach Jen Lalor. \"But this win serves notice: we don\u2019t settle. Our players never quit.\u201d \r\n\r\nIndeed, by the 80th minute it was clear that host South Coast FC was playing for the draw against the 2016 WPSL championship finalist SeaLions, after surviving a constant barrage of SeaLion shots, corner kicks, and forays into their end of the field. The SeaLions created nine scoring chances, including two or three open nets, in the first 45 minutes of play but could not convert. The team could have easily been up 5-0 entering the second half of play but several of their scoring opportunities ended up hitting the crossbar, the post, or being deflected by the opposing goalkeeper. As it was, SCFC managed only two shots on goal the entire match.\r\n\r\n\"We felt like we should have been up 5-0 by halftime,\" said San Diego captain and midfielder Rosie Tantillo-Colon (USC\/FC Gold Pride). \"We had great rhythm going forward, and our eagerness to get some goals had us playing a more direct attack than we normally play.\"\r\n\r\nIt was Tantillo Colon\u2019s one-touch pass to Hix (Mira Costa College) who had broken open down the left side that led to the goal, a smooth left-footed shot from near the end-line that tucked just inside the right post.\r\n\r\n\u201cThat was the most difficult shot we took all afternoon,\u201d added Lalor. \u201cA lot of players and teams would have missed that chance, especially in light of all the earlier chances that hadn\u2019t succeeded. But our ladies refused to bend to the pressure, and refused to give up.\u201d\r\n\r\nDespite San Diego\u2019s defensive dominance, the match very nearly ended in disaster in the 78th minute, when South Coast forward Natalia Ledezma (UC-Irvine) broke away towards San Diego\u2019s goal and looked sure to score. It took a spectacular save from SeaLions goalkeeper Kaycee Gunion (CSU-San Marcos) to keep the score 0-0. That was the only, and last, real chance South Coast would see in the game.\r\n\r\n\"The game highlighted some of our strengths of character, and it also showed us what we should work on,\u201d noted Assistant Coach Lu Snyder. \u201cWe also saw good things from our newcomers Monica Dolinsky (Kansas) whose link-up play in midfield kept us on the attack, and Sam Staab (Clemson), whose solid defending helped give us the confidence to repeatedly go forward. Thus the game was a success from every angle. And we will get even better!\"\r\n\r\nThe SeaLions travel to Arizona on June 9-10, 2017 to face Phoenix Del Sol and Tucson FC, before returning to San Diego for San Diego Soccer Weekend on Saturday and Sunday, June 17 at 7:30 p.m., and June 18, at 2:00 p.m., when they will host those same Arizona teams.\r\n\r\nThe San Diego SeaLions are a non-profit 501c3 entity dedicated to fostering women's soccer coaching, playing, and business management opportunities. It\u2019s one of the oldest and most successful women\u2019s soccer clubs in the USA and is a charter member of the WPSL."}];
         
-        $scope.globalText = [
-            {
-                "home":"Welcome to the Sealions app!",
-                "game_schedule":"Check out the game schedule below.",
-                "roster":"Check out the roster below.",
-                "news_posts":"Check out the latest Sealions news below.",
-                "sponsors":"Check out our sponsors below."
-            }
-        ];
-        
+        $scope.global_text = [{"home":"Welcome to the Sealions app!","game_schedule":"Check out the game schedule below.","roster":"Check out the roster below.","news_posts":"Check out the latest Sealions news below.","sponsors":"Check out our sponsors below.","wpsl_logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/team_logo\/public\/wpsl-logo.jpg?itok=UFYDJ9O9","alt":""},"wpsl_url":"http:\/\/www.wpsl.info\/","sealions_logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/team_logo\/public\/wpsl-logo--sealions.jpg?itok=NTcYpiTk","alt":""},"sealions_url":"http:\/\/www.sealionsoccer.com\/"}];
+
         $scope.selectPost = function(item) {
             $scope.selectedPost = item;
         };
@@ -81,106 +47,39 @@ angular.module('starter.controllers', ['ngResource'])
             $scope.games = response.data.games;
         });
         $http.get('https://dev-sealions.pantheonsite.io/api/sealions-global-text').then(function(response) {
-            $scope.globalText = response.data.posts;
+            $scope.global_text = response.data.global_text;
         });
         
-        $scope.games = [
-            {
-                "opponent":"Strikers FC South Coast",
-                "date":"05\/21\/2017 - 16:00",
-                "home_or_away":"Away",
-                "location":"Ocean View High - 7071 Gothard St, Huntington Beach",
-                "win_or_loss":"Win",
-                "sealions_score":"1",
-                "opponents_score":"0"
-            },{
-                "opponent":"FC Tucson Women",
-                "date":"06\/09\/2017 - 19:30",
-                "home_or_away":"Away",
-                "location":"Kino North Stadium, 3600 S Country Club Rd, Tucson, AZ 85713",
-                "win_or_loss":"",
-                "sealions_score":"",
-                "opponents_score":""
-            },{
-                "opponent":"Phoenix Del Sol",
-                "date":"06\/10\/2017 - 19:30",
-                "home_or_away":"Away",
-                "location":"Reach 11 #1, 2425 E Deer Valley Dr, Phoenix, AZ 85050",
-                "win_or_loss":"",
-                "sealions_score":"",
-                "opponents_score":""
-            }
-        ];
-        
-        for (var i=0; i < $scope.games.length; i++) {
-            $scope.newDate = $scope.games[i].date.split(" - ");
-            $scope.games[i].date = new Date($scope.newDate[0]);
-            $scope.games[i].time = $scope.newDate[1];
-        }
-
-        $scope.globalText = [
-            {
-                "home":"Welcome to the Sealions app!",
-                "game_schedule":"Check out the game schedule below.",
-                "roster":"Check out the roster below.",
-                "news_posts":"Check out the latest Sealions news below.",
-                "sponsors":"Check out our sponsors below."
-            }
-        ];
+        $scope.games = [{"opponent":"Strikers FC South Coast","date":"May 21, 2017","time":"4:00 pm","home_or_away":"Away","location":"Ocean View High - 7071 Gothard St, Huntington Beach","win_or_loss":"Win","sealions_score":"1","opponents_score":"0","opponent_logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/team_logo\/public\/wpsl-logo--strikers-fc-coast.jpg?itok=DW4cE6GX","alt":""}},{"opponent":"FC Tuscon Women","date":"Jun 9, 2017","time":"7:30 pm","home_or_away":"Away","location":"Kino North Stadium, 3600 S Country Club Rd, Tucson, AZ 85713","win_or_loss":"","sealions_score":"","opponents_score":"","opponent_logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/team_logo\/public\/wpsl-logo--fc-tuscon-women.jpg?itok=Ax66qFw1","alt":""}},{"opponent":"Strikers Phoenix Del Sol","date":"Jun 10, 2017","time":"7:30 pm","home_or_away":"Away","location":"Reach 11 #1, 2425 E Deer Valley Dr, Phoenix, AZ 85050","win_or_loss":"","sealions_score":"","opponents_score":"","opponent_logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/team_logo\/public\/wpsl-logo--strikers-phoenix-del-sol.jpg?itok=5YSno47u","alt":""}},{"opponent":"Strikers Phoenix Del Sol","date":"Jun 17, 2017","time":"7:30 pm","home_or_away":"Home","location":"Cathedral Catholic, 5555 Del Mar Heights Rd, San Diego, CA 92130","win_or_loss":"","sealions_score":"","opponents_score":"","opponent_logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/team_logo\/public\/wpsl-logo--strikers-phoenix-del-sol.jpg?itok=5YSno47u","alt":""}},{"opponent":"FC Tuscon Women","date":"Jun 18, 2017","time":"2:00 pm","home_or_away":"Home","location":"Cathedral Catholic, 5555 Del Mar Heights Rd, San Diego, CA 92130","win_or_loss":"","sealions_score":"","opponents_score":"","opponent_logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/team_logo\/public\/wpsl-logo--fc-tuscon-women.jpg?itok=Ax66qFw1","alt":""}},{"opponent":"Strikers FC South Coast","date":"Jun 24, 2017","time":"7:30 pm","home_or_away":"Home","location":"Cathedral Catholic, 5555 Del Mar Heights Rd, San Diego, CA 92130","win_or_loss":"","sealions_score":"","opponents_score":"","opponent_logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/team_logo\/public\/wpsl-logo--strikers-fc-coast.jpg?itok=DW4cE6GX","alt":""}},{"opponent":"FC Pacific","date":"Jun 25, 2017","time":"7:30 pm","home_or_away":"TBA","location":"TBA","win_or_loss":"","sealions_score":"","opponents_score":"","opponent_logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/team_logo\/public\/wpsl-logo--fc-pacific.jpg?itok=8waC7NIj","alt":""}},{"opponent":"LA Galaxy San Diego","date":"Jul 1, 2017","time":"6:00 pm","home_or_away":"Away","location":"Army & Navy Academy, 2605 Carlsbad Blvd, Carlsbad, CA 92008","win_or_loss":"","sealions_score":"","opponents_score":"","opponent_logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/team_logo\/public\/wpsl-logo--la-galaxy-san-diego.jpg?itok=9jdnLtoC","alt":""}},{"opponent":"FC Pacific","date":"Jul 2, 2017","time":"2:00 pm","home_or_away":"Home","location":"Cathedral Catholic, 5555 Del Mar Heights Rd, San Diego, CA 92130","win_or_loss":"","sealions_score":"","opponents_score":"","opponent_logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/team_logo\/public\/wpsl-logo--fc-pacific.jpg?itok=8waC7NIj","alt":""}},{"opponent":"LA Galaxy San Diego","date":"Jul 8, 2017","time":"7:30 pm","home_or_away":"Home","location":"Cathedral Catholic, 5555 Del Mar Heights Rd, San Diego, CA 92130","win_or_loss":"","sealions_score":"","opponents_score":"","opponent_logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/team_logo\/public\/wpsl-logo--la-galaxy-san-diego.jpg?itok=9jdnLtoC","alt":""}}];
+        $scope.global_text = [{"home":"Welcome to the Sealions app!","game_schedule":"Check out the game schedule below.","roster":"Check out the roster below.","news_posts":"Check out the latest Sealions news below.","sponsors":"Check out our sponsors below.","wpsl_logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/team_logo\/public\/wpsl-logo.jpg?itok=UFYDJ9O9","alt":""},"wpsl_url":"http:\/\/www.wpsl.info\/","sealions_logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/team_logo\/public\/wpsl-logo--sealions.jpg?itok=NTcYpiTk","alt":""},"sealions_url":"http:\/\/www.sealionsoccer.com\/"}];
         
     }
 ])
 
-.controller('TeamCtrl', ['$scope', '$state', '$ionicHistory', '$window', '$http', '$resource',
-    function($scope, $state, $ionicHistory, $window, $http, $resource) {
+.controller('TeamCtrl', ['$scope', '$state', '$ionicHistory', '$window', '$http', '$resource', '$ionicModal',
+    function($scope, $state, $ionicHistory, $window, $http, $resource, $ionicModal) {
 
         $http.get('https://dev-sealions.pantheonsite.io/api/sealions-roster').then(function(response) {
             $scope.roster = response.data.players;
         });
         $http.get('https://dev-sealions.pantheonsite.io/api/sealions-global-text').then(function(response) {
-            $scope.globalText = response.data.posts;
+            $scope.global_text = response.data.global_text;
         });
         
-        $scope.roster = [
-            {
-                "headshot":{
-                    "src":"http:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/thumbnail\/public\/sealions-headshot--grace-shevlin-03.jpg?itok=gsjSjL3w",
-                    "alt":""
-                },
-                "first":"Grace",
-                "last":"Shevlin",
-                "jersey_number":"3",
-                "position":"Defender"
-            },{
-                "headshot":{
-                    "src":"http:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/thumbnail\/public\/sealions-headshot--caroline-shevlin-04.jpg?itok=z0puILLC",
-                    "alt":""
-                },
-                "first":"Caroline",
-                "last":"Shevlin",
-                "jersey_number":"4",
-                "position":"Defender"
-            },{
-                "headshot":{
-                    "src":"http:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/thumbnail\/public\/sealions-headshot--nikki-petracca-05.jpg?itok=-FYRQehJ",
-                    "alt":""
-                },
-                "first":"Nikki",
-                "last":"Petracca",
-                "jersey_number":"5",
-                "position":"Forward"
-            }
-        ];
+        $scope.roster = [{"headshot":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/sealions_player_headshot\/public\/sealions-headshot--grace-shevlin-03.jpg?itok=9BnE8J73","alt":""},"first":"Grace","last":"Shevlin","jersey_number":"3","position":"Defender","bio":"","college":"","hometown":"","years_with_sealions":""},{"headshot":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/sealions_player_headshot\/public\/sealions-headshot--caroline-shevlin-04.jpg?itok=7FRCHuWL","alt":""},"first":"Caroline","last":"Shevlin","jersey_number":"4","position":"Defender","bio":"","college":"","hometown":"","years_with_sealions":""},{"headshot":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/sealions_player_headshot\/public\/sealions-headshot--cassie-callahan-05.jpg?itok=LsKblbSZ","alt":""},"first":"Cassie","last":"Callahan","jersey_number":"5","position":"Midfielder","bio":"","college":"","hometown":"","years_with_sealions":""},{"headshot":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/sealions_player_headshot\/public\/sealions-headshot--nikki-petracca-05.jpg?itok=taYaXJqI","alt":""},"first":"Nikki","last":"Petracca","jersey_number":"5","position":"Forward","bio":"","college":"","hometown":"","years_with_sealions":""},{"headshot":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/sealions_player_headshot\/public\/sealions-headshot--jayden-montejano-06.jpg?itok=0F0xMO1d","alt":""},"first":"Jayden","last":"Montejano","jersey_number":"6","position":"Defender - Midfielder","bio":"","college":"","hometown":"","years_with_sealions":""},{"headshot":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/sealions_player_headshot\/public\/sealions-headshot--leigh-ann-brown-07.jpg?itok=udT0dsRv","alt":""},"first":"Leigh Ann","last":"Brown","jersey_number":"7","position":"Defender - Midfielder","bio":"","college":"","hometown":"","years_with_sealions":""},{"headshot":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/sealions_player_headshot\/public\/sealions-headshot--soli-gomez-09.jpeg?itok=c8sbGbOe","alt":""},"first":"Soli","last":"Gomez","jersey_number":"9","position":"Midfielder - Foward","bio":"","college":"","hometown":"","years_with_sealions":""},{"headshot":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/sealions_player_headshot\/public\/sealions-headshot--janelly-farias-10.jpg?itok=BLYxy13w","alt":""},"first":"Janelly","last":"Farias","jersey_number":"10","position":"Midfielder","bio":"","college":"","hometown":"","years_with_sealions":""},{"headshot":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/sealions_player_headshot\/public\/sealions-headshot--angelina-hix-12.jpg?itok=JZV2lukz","alt":""},"first":"Angelina","last":"Hix","jersey_number":"12","position":"Midfielder - Foward","bio":"","college":"","hometown":"","years_with_sealions":""},{"headshot":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/sealions_player_headshot\/public\/sealions-headshot--samantha-staab-13.jpg?itok=xJ-5Z0Cd","alt":""},"first":"Samantha","last":"Staab","jersey_number":"13","position":"Defender","bio":"","college":"","hometown":"","years_with_sealions":""},{"headshot":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/sealions_player_headshot\/public\/sealions-headshot--karina-cisneros-14.jpg?itok=e3d3o1Qh","alt":""},"first":"Karina","last":"Cisneros","jersey_number":"14","position":"Defender","bio":"","college":"","hometown":"","years_with_sealions":""},{"headshot":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/sealions_player_headshot\/public\/sealions-headshot--elissa-magracia-16.jpg?itok=0JMD-hm6","alt":""},"first":"Elissa","last":"Magracia","jersey_number":"16","position":"Midfielder","bio":"","college":"","hometown":"","years_with_sealions":""},{"headshot":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/sealions_player_headshot\/public\/sealions-headshot--monica-dolinsky-17.jpg?itok=2cWd9s2H","alt":""},"first":"Monica","last":"Dolinsky","jersey_number":"17","position":"Midfielder","bio":"","college":"","hometown":"","years_with_sealions":""},{"headshot":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/sealions_player_headshot\/public\/sealions-headshot--rosie-tantillo-colon-19.jpg?itok=bXd_uRrJ","alt":""},"first":"Rosie","last":"Tantillo-Col\u00f3n","jersey_number":"19","position":"Midfielder","bio":"","college":"","hometown":"","years_with_sealions":""},{"headshot":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/sealions_player_headshot\/public\/sealions-headshot--andrea-duke-20.jpg?itok=Q9Djz1YA","alt":""},"first":"Andrea","last":"Duke","jersey_number":"20","position":"Midfielder","bio":"","college":"","hometown":"","years_with_sealions":""},{"headshot":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/sealions_player_headshot\/public\/sealions-headshot--elise-britt-21.jpg?itok=inAK0VzX","alt":""},"first":"Elise","last":"Britt","jersey_number":"21","position":"Defender - Midfielder - Foward","bio":"","college":"","hometown":"","years_with_sealions":""},{"headshot":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/sealions_player_headshot\/public\/sealions-headshot--victoria-gersh-22.jpg?itok=6xKSYcVE","alt":""},"first":"Vistoria","last":"Gersh","jersey_number":"22","position":"Defender","bio":"","college":"","hometown":"","years_with_sealions":""},{"headshot":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/sealions_player_headshot\/public\/sealions-headshot--taleen-taylor-23.jpg?itok=M2ta3aSu","alt":""},"first":"Taleen","last":"Taylor","jersey_number":"23","position":"Midfielder","bio":"","college":"","hometown":"","years_with_sealions":""},{"headshot":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/sealions_player_headshot\/public\/sealions-headshot--abigail-callahan-24.jpg?itok=Q_fJ7px1","alt":""},"first":"Abigail","last":"Callahan","jersey_number":"24","position":"Defender - Midfielder - Foward","bio":"","college":"","hometown":"","years_with_sealions":""},{"headshot":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/sealions_player_headshot\/public\/sealions-headshot--kaycee-gunion-30.jpg?itok=dQA-oPZX","alt":""},"first":"Kaycee","last":"Gunion","jersey_number":"30","position":"Goalkeeper","bio":"","college":"","hometown":"","years_with_sealions":""}];
 
-        $scope.globalText = [
-            {
-                "home":"Welcome to the Sealions app!",
-                "game_schedule":"Check out the game schedule below.",
-                "roster":"Check out the roster below.",
-                "news_posts":"Check out the latest Sealions news below.",
-                "sponsors":"Check out our sponsors below."
-            }
-        ];
+        $scope.global_text = [{"home":"Welcome to the Sealions app!","game_schedule":"Check out the game schedule below.","roster":"Check out the roster below.","news_posts":"Check out the latest Sealions news below.","sponsors":"Check out our sponsors below.","wpsl_logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/team_logo\/public\/wpsl-logo.jpg?itok=UFYDJ9O9","alt":""},"wpsl_url":"http:\/\/www.wpsl.info\/","sealions_logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/team_logo\/public\/wpsl-logo--sealions.jpg?itok=NTcYpiTk","alt":""},"sealions_url":"http:\/\/www.sealionsoccer.com\/"}];
+
+        $scope.selectPlayer = function(item) {
+            $scope.selectedPlayer = item;
+        };
+        
+        $ionicModal.fromTemplateUrl('player-modal.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function(modal) {
+            $scope.modal = modal;
+        });
 
     }
 ])
@@ -192,47 +91,12 @@ angular.module('starter.controllers', ['ngResource'])
             $scope.sponsors = response.data.sponsors;
         });
         $http.get('https://dev-sealions.pantheonsite.io/api/sealions-global-text').then(function(response) {
-            $scope.globalText = response.data.posts;
+            $scope.global_text = response.data.global_text;
         });
 
-        $scope.sponsors = [
-            {
-                "title":"Ben & Jerrys",
-                "logo":{
-                    "src":"http:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/thumbnail\/public\/sealions-sponsor-logo--ben-and-jerrys.jpg?itok=hE0wyrNy",
-                    "alt":""
-                },
-                "qr_code":{
-                    "src":"http:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/qr_code\/public\/sealions-sponsor-qr-code--ben-and-jerrys.png?itok=rSxrz99q",
-                    "alt":""
-                },
-                "website":"http:\/\/www.benjerry.com\/",
-                "body":"From a renovated gas station in Burlington, Vermont, to far-off places with names we sometimes mispronounce, the journey that began in 1978 with 2 guys and the ice cream business they built is as legendary as the ice cream is euphoric."
-            },
-            {
-                "title":"Ben & Jerrys",
-                "logo":{
-                    "src":"http:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/thumbnail\/public\/sealions-sponsor-logo--ben-and-jerrys.jpg?itok=hE0wyrNy",
-                    "alt":""
-                },
-                "qr_code":{
-                    "src":"http:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/qr_code\/public\/sealions-sponsor-qr-code--ben-and-jerrys.png?itok=rSxrz99q",
-                    "alt":""
-                },
-                "website":"http:\/\/www.benjerry.com\/",
-                "body":"From a renovated gas station in Burlington, Vermont, to far-off places with names we sometimes mispronounce, the journey that began in 1978 with 2 guys and the ice cream business they built is as legendary as the ice cream is euphoric."
-            }
-        ];
+        $scope.sponsors = [{"title":"Ben & Jerrys","logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/logo\/public\/sealions-sponsor-logo--ben-and-jerrys.jpg?itok=jfxZhi7W","alt":""},"qr_code":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/qr_code\/public\/sealions-sponsor-qr-code--ben-and-jerrys.png?itok=rSxrz99q","alt":""},"website":"http:\/\/www.benjerry.com\/","body":"From a renovated gas station in Burlington, Vermont, to far-off places with names we sometimes mispronounce, the journey that began in 1978 with 2 guys and the ice cream business they built is as legendary as the ice cream is euphoric."}];
         
-        $scope.globalText = [
-            {
-                "home":"Welcome to the Sealions app!",
-                "game_schedule":"Check out the game schedule below.",
-                "roster":"Check out the roster below.",
-                "news_posts":"Check out the latest Sealions news below.",
-                "sponsors":"Check out our sponsors below."
-            }
-        ];
+        $scope.global_text = [{"home":"Welcome to the Sealions app!","game_schedule":"Check out the game schedule below.","roster":"Check out the roster below.","news_posts":"Check out the latest Sealions news below.","sponsors":"Check out our sponsors below.","wpsl_logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/team_logo\/public\/wpsl-logo.jpg?itok=UFYDJ9O9","alt":""},"wpsl_url":"http:\/\/www.wpsl.info\/","sealions_logo":{"src":"https:\/\/dev-sealions.pantheonsite.io\/sites\/default\/files\/styles\/team_logo\/public\/wpsl-logo--sealions.jpg?itok=NTcYpiTk","alt":""},"sealions_url":"http:\/\/www.sealionsoccer.com\/"}];
         
         $scope.selectSponsor = function(item) {
             $scope.selectedSponsor = item;

@@ -2,22 +2,33 @@
     <ion-header-bar align-title="middle" style="background-color: #526DB2">
         <h1 class="title">SeaLions Roster</h1>
     </ion-header-bar>
-    <ion-content class="has-header has-footer">
+    <ion-content class="has-header has-footer none">
 
         <div class="header-text dark">
-            {{globalText[0].roster}}
+            {{global_text[0].roster}}
         </div>
-
-        <div ng-repeat="item in roster" class="player">
-            <img class="player-photo" ng-src="{{item.headshot.src}}" alt="Player Headshot" />
-            <h1 class="player-name">
-                <span class="player-text-overlay">
-                    {{item.position | limitTo: 27}}
-                    &nbsp;&nbsp;<br>&nbsp;&nbsp;
-                    #{{item.jersey_number}} {{item.first}} {{item.last}}
-                </span>
-            </h1>
-        </div>
+        
+        <ion-list>
+            <div ng-repeat="item in roster">
+                <ion-item class="none" style="border: none" ng-click="modal.show(); selectPlayer(item)">
+                    
+                    <div class="row">
+                        <div class="col col-20" style="text-align:center">
+                            <div class="jersey" style="margin-top:5px">{{item.jersey_number}}</div>
+                        </div>
+                        <div class="col col-70" style="border-bottom: 1px solid #999999">
+                            {{item.first}} {{item.last}}
+                            <br>
+                            <small>{{item.position}}</small>
+                        </div>
+                        <div class="col col-10" style="border-bottom: 1px solid #999999">
+                            <i class="ion-chevron-right" style="float:right; padding-right:10px; padding-top:5px"></i>
+                        </div>
+                    </div>
+                    
+                </ion-item>
+            </div>
+        </ion-list>
 
     </ion-content>
     
@@ -29,3 +40,57 @@
         <i class="footer-icon ion-earth" ui-sref="sponsors"></i> 
     </ion-footer-bar>
 </ion-view>
+
+
+<script id="player-modal.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar align-title="middle" style="background-color: #526DB2">
+            <h1 class="title">{{selectedPlayer.first}} {{selectedPlayer.last}}</h1>
+            <div class="buttons" style="color: white;" ng-click="modal.hide()">
+                <i class="ion-close-circled"></i>
+            </div>
+        </ion-header-bar>
+        <ion-content style="padding-top:15px">
+        
+            <div class="player">
+                <img class="player-photo" ng-src="{{selectedPlayer.headshot.src}}" alt="Player Headshot" />
+                <h1 class="player-name">
+                    <span class="player-text-overlay">
+                        {{selectedPlayer.first}} {{selectedPlayer.last}}
+                        &nbsp;&nbsp;<br>&nbsp;&nbsp;
+                        #{{selectedPlayer.jersey_number}} {{selectedPlayer.position}}
+                    </span>
+                </h1>
+            </div>
+            
+            <div class="row none">
+                <div class="col none">
+                    <h1>College</h1>
+                    <p ng-if="selectedPlayer.college">{{selectedPlayer.college}}</p>
+                    <p ng-if="!selectedPlayer.college">Unknown</p>
+                </div>
+                <div class="col none">
+                    <h1>Hometown</h1>
+                    <p ng-if="selectedPlayer.hometown">{{selectedPlayer.hometown}}</p>
+                    <p ng-if="!selectedPlayer.hometown">Unknown</p>
+                </div>
+                <div class="col none">
+                    <h1>On Team</h1>
+                    <p ng-if="selectedPlayer.years_with_sealions">{{selectedPlayer.years_with_sealions}}</p>
+                    <p ng-if="!selectedPlayer.years_with_sealions">Unknown</p>
+                </div>
+            </div>
+            
+            <hr>
+
+            <h1>Player Bio</h1>
+            <p ng-if="selectedPlayer.bio">{{selectedPlayer.bio}}</p>
+            <p ng-if="!selectedPlayer.bio">Player Bio coming soon!</p>
+            
+            <button class="button-block button-style opaque center-button" ng-click="modal.hide()">
+                Return to Team Page
+            </button>
+            <br>
+        </ion-content>
+    </ion-modal-view>
+</script>
