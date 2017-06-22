@@ -5,7 +5,7 @@
     <ion-content class="has-header has-footer">
 
         <div class="header-text dark">
-            <div id="headerID"></div>
+            <div id="globalHeader"></div>
         </div>
         
         <div ng-repeat="item in games" >
@@ -22,8 +22,11 @@
                         <div class="home-away none">Home</div>
                     </div>
                     <div class="col col-50 game-time none">
-                        {{item.time}}<br>
+                        {{item.time}}
+                        <br>
                         <a class="home-away" href="http://maps.apple.com/?q={{item.location}}">View Location</a>
+                        <br>
+                        <a class="home-away" href="" ng-click="addEvent()">Add to Calendar</a>
                     </div>
                     <div class="col col-25 none">
                         <img class="team-logo none" ng-if="item.home_or_away === 'Away'" ng-src="{{global_text[0].sealions_logo.src}}">

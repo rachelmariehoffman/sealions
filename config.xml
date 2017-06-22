@@ -26,7 +26,10 @@
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.0" />
     <plugin name="cordova-plugin-statusbar" spec="~2.2.0" />
     <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
-    <plugin name="cordova-plugin-calendar" spec="~4.5.5">
+    <plugin name="cordova-plugin-calendar" spec="https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git">
         <variable name="CALENDAR_USAGE_DESCRIPTION" value="This app uses your calendar" />
     </plugin>
+    <feature name="Calendar">
+    	<param name="ios-package" value="Calendar" />
+    </feature>
 </widget>
