@@ -209,34 +209,38 @@ angular.module('starter.controllers', ['ngResource'])
         
         
         
-        $scope.addEvent = function() {
-            window.confirm("The Add Event button has been clicked");
+        $scope.addEvent = function(event) {
+            // window.confirm("The Add Event button has been clicked");
+            
+            // $scope.startDate = new Date(2017, 5, 23, 14, 0, 0, 0);
+            // $scope.endDate = new Date(2017, 5, 23, 16, 0, 0, 0);
             
             
-            $cordovaCalendar.createCalendar({
-                calendarName: 'Cordova Calendar',
-                calendarColor: '#FF0000'
-            }).then(function (result) {
-                console.log('success: ' + result);
-                window.confirm("Create Calendar: SUCCESS");
-            }, function (err) {
-                console.log('error: ' + err);
-                window.confirm("Create Calendar: ERROR");
-            });
+
+            
+            $scope.title = "SeaLions " + event.home_or_away + " vs. " + event.opponent;
+            $scope.location = event.location;
+            $scope.startDate = new Date(event.date);
+            $scope.endDate = new Date(event.date);
+            $scope.endDate.setDate($scope.endDate.getDate() + 1);
+            
+            
+            
+
             
             $cordovaCalendar.createEvent({
-                title: 'Space Race',
-                location: 'The Moon',
-                notes: 'Bring sandwiches',
-                startDate: new Date(2015, 0, 6, 18, 30, 0, 0, 0),
-                endDate: new Date(2015, 1, 6, 12, 0, 0, 0, 0)
+                title: $scope.title,
+                location: $scope.location,
+                startDate: $scope.startDate,
+                endDate: $scope.endDate
             }).then(function (result) {
-                console.log('success: ' + result);
                 window.confirm("Create Event: SUCCESS");
+                window.confirm($scope.startDate); 
+                window.confirm($scope.endDate); 
             }, function (err) {
-                console.log('error: ' + err);
-                window.confirm("Create Event: SUCCESS");
-            });
+                window.confirm('Create Event: ERROR, ' + err);
+            }); 
+
         };
             
 
