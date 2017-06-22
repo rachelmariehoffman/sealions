@@ -3,9 +3,9 @@
         <h1 class="title">SeaLions Roster</h1>
     </ion-header-bar>
     <ion-content class="has-header has-footer none">
-
+ 
         <div class="header-text dark">
-            {{global_text[0].roster}}
+            <div id="headerID"></div>
         </div>
         
         <ion-list>
@@ -14,7 +14,12 @@
                     
                     <div class="row">
                         <div class="col col-20" style="text-align:center">
-                            <div class="jersey" style="margin-top:5px">{{item.jersey_number}}</div>
+                            <div class="jersey" style="margin-top:5px">
+                                <span ng-if="item.jersey_number === '1001'">HC</span>
+                                <span ng-if="item.jersey_number === '1002'">AC</span>
+                                <span ng-if="item.jersey_number === '1003'">M</span>
+                                <span ng-if="item.jersey_number != '1001' && item.jersey_number != '1002' && item.jersey_number != '1003'">#{{item.jersey_number}}</span>
+                            </div>
                         </div>
                         <div class="col col-70" style="border-bottom: 1px solid #999999">
                             {{item.first}} {{item.last}}
@@ -58,31 +63,27 @@
                     <span class="player-text-overlay">
                         {{selectedPlayer.first}} {{selectedPlayer.last}}
                         &nbsp;&nbsp;<br>&nbsp;&nbsp;
-                        #{{selectedPlayer.jersey_number}} {{selectedPlayer.position}}
+                        <span ng-if="selectedPlayer.jersey_number === '1001'">HC</span>
+                        <span ng-if="selectedPlayer.jersey_number === '1002'">AC</span>
+                        <span ng-if="selectedPlayer.jersey_number === '1003'">M</span>
+                        <span ng-if="selectedPlayer.jersey_number != '1001' && selectedPlayer.jersey_number != '1002' && selectedPlayer.jersey_number != '1003'">#{{selectedPlayer.jersey_number}}</span>
+                        {{selectedPlayer.position}}
                     </span>
                 </h1>
             </div>
             
-            <div class="row none">
-                <div class="col none">
-                    <h1>College</h1>
-                    <p ng-if="selectedPlayer.college">{{selectedPlayer.college}}</p>
-                    <p ng-if="!selectedPlayer.college">Unknown</p>
-                </div>
-                <div class="col none">
-                    <h1>Hometown</h1>
-                    <p ng-if="selectedPlayer.hometown">{{selectedPlayer.hometown}}</p>
-                    <p ng-if="!selectedPlayer.hometown">Unknown</p>
-                </div>
-                <div class="col none">
-                    <h1>On Team</h1>
-                    <p ng-if="selectedPlayer.years_with_sealions">{{selectedPlayer.years_with_sealions}}</p>
-                    <p ng-if="!selectedPlayer.years_with_sealions">Unknown</p>
-                </div>
-            </div>
-            
+            <h1>College</h1>
+            <p ng-if="selectedPlayer.college">{{selectedPlayer.college}}</p>
+            <p ng-if="!selectedPlayer.college">Unknown</p>
             <hr>
-
+            <h1>Hometown</h1>
+            <p ng-if="selectedPlayer.hometown">{{selectedPlayer.hometown}}</p>
+            <p ng-if="!selectedPlayer.hometown">Unknown</p>
+            <hr>
+            <h1>Years With SeaLions</h1>
+            <p ng-if="selectedPlayer.years_with_sealions">{{selectedPlayer.years_with_sealions}}</p>
+            <p ng-if="!selectedPlayer.years_with_sealions">Unknown</p>
+            <hr>
             <h1>Player Bio</h1>
             <p ng-if="selectedPlayer.bio">{{selectedPlayer.bio}}</p>
             <p ng-if="!selectedPlayer.bio">Player Bio coming soon!</p>

@@ -5,12 +5,13 @@
     <ion-content class="has-header has-footer">
         
         <div class="header-text dark">
-            {{global_text[0].news_posts}}
+            <div id="headerID"></div>
         </div>
 
         <div ng-repeat="item in posts">
             <img class="hero-photo" ng-src="{{item.hero_image.src}}" alt="Hero Image"/>
             <h1>{{item.title}}</h1>
+            <h1 style="font-weight:500">{{item.date}}</h1>
             <p>{{item.body | limitTo: 150}}...</p>
             <button class="button-block button-style opaque center-button" ng-click="modal.show(); selectPost(item)">
                 Read More

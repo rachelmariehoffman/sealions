@@ -5,7 +5,7 @@
     <ion-content class="has-header has-footer">
 
         <div class="header-text dark">
-            {{global_text[0].game_schedule}}
+            <div id="headerID"></div>
         </div>
         
         <div ng-repeat="item in games" >
@@ -36,7 +36,11 @@
             
             <div class="game-result" ng-show="item.win_or_loss">
                 {{item.win_or_loss}}: {{item.sealions_score}} - {{item.opponents_score}}
+                <span ng-click="modal.show(); selectGame(item)" style="float:right">
+                    Game Summary <i class="ion-arrow-right-b"></i>
+                </span> 
             </div>
+            
         </div>
 
     </ion-content>
@@ -50,3 +54,52 @@
     </ion-footer-bar>
 </ion-view>
 
+
+<script id="game-modal.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar align-title="middle" style="background-color: #526DB2">
+            <h1 class="title">Game Summary</h1>
+            <div class="buttons" style="color: white;" ng-click="modal.hide()">
+                <i class="ion-close-circled"></i>
+            </div>
+        </ion-header-bar>
+        <ion-content style="padding-top:15px">
+            
+            <div class="game-date">
+                {{selectedGame.date}}<br>
+                <small>{{selectedGame.opponent}}</small>
+            </div>
+            <div class="schedule-border" data-ng-class="{'schedule-margin': !selectedGame.win_or_loss}">
+
+                <div class="row" class="none">
+                    <div class="col col-25 none">
+                        <img class="team-logo none" ng-if="selectedGame.home_or_away != 'Away'" ng-src="{{global_text[0].sealions_logo.src}}">
+                        <img class="team-logo none" ng-if="selectedGame.home_or_away === 'Away'" ng-src="{{selectedGame.opponent_logo.src}}">
+                        <div class="home-away none">Home</div>
+                    </div>
+                    <div class="col col-50 game-time none">
+                        {{selectedGame.time}}<br>
+                        <a class="home-away" href="http://maps.apple.com/?q={{selectedGame.location}}">View Location</a>
+                    </div>
+                    <div class="col col-25 none">
+                        <img class="team-logo none" ng-if="selectedGame.home_or_away === 'Away'" ng-src="{{global_text[0].sealions_logo.src}}">
+                        <img class="team-logo none" ng-if="selectedGame.home_or_away != 'Away'" ng-src="{{selectedGame.opponent_logo.src}}">
+                        <div class="home-away none">Away</div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="game-result" ng-show="selectedGame.win_or_loss">
+                {{selectedGame.win_or_loss}}: {{selectedGame.sealions_score}} - {{selectedGame.opponents_score}}
+            </div>
+        
+            <p ng-if="selectedGame.game_summary">{{selectedGame.game_summary}}</p>
+            <p ng-if="!selectedGame.game_summary">We haven't had a chance to post a game summary for this game yet. Check back later!</p>
+            <button class="button-block button-style opaque center-button" ng-click="modal.hide()">
+                Return to Game Page
+            </button>
+            <br>
+        </ion-content>
+    </ion-modal-view>
+</script>

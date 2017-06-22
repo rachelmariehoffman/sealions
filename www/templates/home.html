@@ -10,8 +10,10 @@
         </div>
         
         <div class="header-text dark" style="margin-bottom:15px">
-            {{global_text[0].home}}
+            <div id="headerID"></div>
         </div>
+        
+        <!--<button ng-click="addDate()">Add Date to Calendar</button>-->
         
         <button class="button-block button-style opaque" ui-sref="news">
             <i class="button-icon-margin ion-document-text"></i> 
@@ -28,6 +30,10 @@
         <button class="button-block button-style opaque" ui-sref="sponsors">
             <i class="button-icon-margin ion-earth"></i> 
             Our Sponsors
+        </button>
+        <button class="button-block button-style opaque" ng-click="modal.show()">
+            <i class="button-icon-margin ion-settings"></i> 
+            About the App
         </button>
         
         <br>
@@ -50,9 +56,40 @@
             </div>
             <div class="col none">
                 <p>
-                    <a href="http://sealionsoccer.com/"><img class="social-logo" src="img/social/website.png" alt="Website Logo"></a>
+                    <a href="https://www.wpsl.info"><img class="social-logo" src="img/color_wpsl_logo.png" alt="WPSL Logo"></a>
+                </p>
+            </div>
+            <div class="col none">
+                <p>
+                    <a href="http://sealionsoccer.com/"><img class="social-logo" src="img/sealions_logo.png" alt="SeaLions Logo"></a>
                 </p>
             </div>
         </div>
+
     </ion-content>
 </ion-view>
+
+<script id="about-modal.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar align-title="middle" style="background-color: #526DB2">
+            <h1 class="title">SeaLions App</h1>
+            <div class="buttons" style="color: white;" ng-click="modal.hide()">
+                <i class="ion-close-circled"></i>
+            </div>
+        </ion-header-bar>
+        <ion-content style="padding-top:15px">
+            <h1>Engineering Team</h1>
+            <p>
+                Front End: Rachel Hoffman
+                <br>
+                Database: Douglas Hoffman
+            </p>
+            <h1>Version</h1>
+            <p>0.0.1</p>
+            <button class="button-block button-style opaque center-button" ng-click="modal.hide()">
+                Return to Home Page
+            </button>
+            <br>
+        </ion-content>
+    </ion-modal-view>
+</script>
