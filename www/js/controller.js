@@ -210,23 +210,26 @@ angular.module('starter.controllers', ['ngResource'])
         
         
         $scope.addEvent = function(event) {
-            // window.confirm("The Add Event button has been clicked");
-            
-            // $scope.startDate = new Date(2017, 5, 23, 14, 0, 0, 0);
-            // $scope.endDate = new Date(2017, 5, 23, 16, 0, 0, 0);
-            
-            
-
-            
+        
             $scope.title = "SeaLions " + event.home_or_away + " vs. " + event.opponent;
             $scope.location = event.location;
             $scope.startDate = new Date(event.date);
             $scope.endDate = new Date(event.date);
-            $scope.endDate.setDate($scope.endDate.getDate() + 1);
-            
-            
-            
 
+            $scope.getStartHours = (event.time).split(':');
+            $scope.getStartMinutes = ($scope.getStartHours[1]).split(' ');
+            $scope.startHours = parseInt($scope.getStartHours[0]);
+            $scope.startMinutes = parseInt($scope.getStartMinutes[0]);
+            $scope.startAMPM = ($scope.getStartMinutes[1]).toLowerCase();
+
+            if ($scope.startAMPM === 'pm') {
+                $scope.startHours += 12;
+            }
+            
+            $scope.startDate.setHours($scope.startHours);
+            $scope.startDate.setMinutes($scope.startMinutes);
+            $scope.endDate.setHours($scope.startHours + 2);
+            $scope.endDate.setMinutes($scope.startMinutes);
             
             $cordovaCalendar.createEvent({
                 title: $scope.title,
@@ -234,11 +237,10 @@ angular.module('starter.controllers', ['ngResource'])
                 startDate: $scope.startDate,
                 endDate: $scope.endDate
             }).then(function (result) {
-                window.confirm("Create Event: SUCCESS");
-                window.confirm($scope.startDate); 
-                window.confirm($scope.endDate); 
+                window.plugins.toast.showLongCenter('Success! This Sealions game has been added to your calendar!');
             }, function (err) {
-                window.confirm('Create Event: ERROR, ' + err);
+                console.log(err);
+                window.plugins.toast.showLongCenter('Whoops! Something went wrong with our "Add to Calendar" feature. Try again later!');
             }); 
 
         };
