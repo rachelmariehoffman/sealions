@@ -36,14 +36,6 @@
         </ion-list>
 
     </ion-content>
-    
-    <ion-footer-bar>
-        <i class="footer-icon ion-home" ui-sref="home"></i>
-        <i class="footer-icon ion-document-text" ui-sref="news"></i> 
-        <i class="footer-icon ion-calendar" ui-sref="schedule"></i> 
-        <i class="footer-icon ion-tshirt" ui-sref="team"></i> 
-        <i class="footer-icon ion-earth" ui-sref="sponsors"></i> 
-    </ion-footer-bar>
 </ion-view>
 
 
@@ -52,7 +44,7 @@
         <ion-header-bar align-title="middle" style="background-color: #526DB2">
             <h1 class="title">{{selectedPlayer.first}} {{selectedPlayer.last}}</h1>
             <div class="buttons" style="color: white;" ng-click="modal.hide()">
-                <i class="ion-close-circled"></i>
+                <i class="ion-close-circled" style="font-size:30px"></i>
             </div>
         </ion-header-bar>
         <ion-content style="padding-top:15px">
@@ -85,7 +77,7 @@
             <p ng-if="!selectedPlayer.years_with_sealions">Unknown</p>
             <hr>
             <h1>Player Bio</h1>
-            <p ng-if="selectedPlayer.bio">{{selectedPlayer.bio}}</p>
+            <p ng-if="selectedPlayer.bio" ng-bind-html="selectedPlayer.bio"></p>
             <p ng-if="!selectedPlayer.bio">Player Bio coming soon!</p>
             
             <button class="button-block button-style opaque center-button" ng-click="modal.hide()">

@@ -2,7 +2,7 @@
     <ion-content>
 
         <div class="strike header-text" ui-sref="home">
-            <span>Welcome</span>
+            <span>WELCOME</span>
         </div>
         
         <div class="landing-logo">
@@ -26,10 +26,10 @@
             Team Roster
         </button>
         <button class="button-block button-style opaque" ui-sref="sponsors">
-            <i class="button-icon-margin ion-earth"></i> 
+            <i class="button-icon-margin ion-social-usd"></i> 
             Our Sponsors
         </button>
-        <button class="button-block button-style opaque" ng-click="modal.show()">
+        <button class="button-block button-style opaque" ng-click="modal.show(); selectAbout()">
             <i class="button-icon-margin ion-settings"></i> 
             About the App
         </button>
@@ -54,7 +54,7 @@
             </div>
             <div class="col none">
                 <p>
-                    <a href="https://www.wpsl.info"><img class="social-logo" src="img/color_wpsl_logo.png" alt="WPSL Logo"></a>
+                    <a href="http://www.wpsl.info"><img class="social-logo" src="img/color_wpsl_logo.png" alt="WPSL Logo"></a>
                 </p>
             </div>
             <div class="col none">
@@ -76,6 +76,11 @@
             </div>
         </ion-header-bar>
         <ion-content style="padding-top:15px">
+        
+            <div class="header-text dark" style="margin-bottom:15px">
+                <span ng-bind-html="about_text"></span>
+            </div>
+            
             <h1>Engineering Team</h1>
             <p>
                 Front End: Rachel Hoffman

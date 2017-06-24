@@ -32,6 +32,10 @@ a {
     color: #526DB2;
 }
 
+a:visited {
+    color: #194795;
+}
+
 /*    GENERAL    */
 
 .none {
@@ -43,7 +47,6 @@ a {
 }
 .header-text {                        /*    WELCOME, USED ON GLOBAL TEXT AT TOP OF PAGES    */
     font-size: 14px;
-    text-transform: uppercase;
     color: #526DB2;
     text-align: center;
     font-weight: 600;
@@ -138,6 +141,9 @@ a {
 }
 .team-logo {
     width: 65px;
+    margin: auto;
+    display: block;
+    
 }
 .home-away {
     font-size: 12px;
@@ -145,28 +151,20 @@ a {
     text-align: center;
     text-transform: uppercase;
 }
-.game-date {
-    color: #999999;
-    font-weight: 500; 
-    text-transform: uppercase;
-    text-align: center;
-    padding-bottom: 10px;
-}
-.game-time {
-    margin-top: 15px;
-    font-size: 24px;
-    font-weight: 500;
-    text-align:center;
-}
+
 .game-result {
+    margin-bottom: 30px;
+    background-color: #7F91C4 !important;
+}
+
+.game-date {
     background-color: #526DB2;
     color: white;
-    font-weight:600; 
+    font-weight:500; 
     text-transform: uppercase;
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-bottom: 30px;
 }
 
 
@@ -207,9 +205,11 @@ a {
 /*    SPONSOR PAGE    */
 
 .sponsor-photo {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 15px;
+    width: 225px;
+    height: auto;
+    padding-bottom: 15px;
+    margin: auto;
+    display: block;
 }
 
 
