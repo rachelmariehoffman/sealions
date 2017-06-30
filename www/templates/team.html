@@ -4,9 +4,7 @@
     </ion-header-bar>
     <ion-content class="has-header has-footer none">
  
-        <div class="header-text dark">
-            <div id="globalHeader"></div>
-        </div>
+        <div class="header-text dark" style="margin-bottom:15px" ng-bind-html="global_header"></div>
         
         <ion-list>
             <div ng-repeat="item in roster">

@@ -9,9 +9,7 @@
             <img src="img/sealions_logo.png" height="150px" width="auto">
         </div>
         
-        <div class="header-text dark" style="margin-bottom:15px">
-            <div id="globalHeader"></div>
-        </div>
+        <div class="header-text dark" style="margin-bottom:15px" ng-bind-html="global_header"></div>
         
         <button class="button-block button-style opaque" ui-sref="news">
             <i class="button-icon-margin ion-document-text"></i> 
@@ -88,7 +86,7 @@
                 Database: Douglas Hoffman
             </p>
             <h1>Version</h1>
-            <p>0.0.1</p>
+            <p>1.0</p>
             <button class="button-block button-style opaque center-button" ng-click="modal.hide()">
                 Return to Home Page
             </button>
